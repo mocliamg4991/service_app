@@ -17,7 +17,7 @@ class Plan(models.Model):
     plan_type = models.CharField(choices = PLAN_TYPES, max_length=10)
     discount_percent = models.PositiveIntegerField(default=0,
                                                     validators=[
-                                                        MaxValueValidator()
+                                                        MaxValueValidator(100)
                                                     ])
 
 class Subscription(models.Model):

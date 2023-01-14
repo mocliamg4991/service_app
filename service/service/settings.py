@@ -129,8 +129,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CELERY_BROKER_URL = 'redis://redis:6379/0'                                       
+
 LOGGING = {
-    'version': 1,
+    'version': 1,                           
     'handlers': {
         'console': {'class':'logging.StreamHandler'}
     },

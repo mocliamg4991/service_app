@@ -131,6 +131,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CELERY_BROKER_URL = 'redis://redis:6379/0'                                       
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': 'redis://redis:6379/0',
+        'OPTIONS': {
+            'db': '1',
+        }
+    }
+}
+
 LOGGING = {
     'version': 1,                           
     'handlers': {
@@ -143,3 +153,5 @@ LOGGING = {
         }
     }
 }
+
+PRICE_CACHE_NAME = 'price_cach'
